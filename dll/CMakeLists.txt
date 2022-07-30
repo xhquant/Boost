@@ -1,0 +1,11 @@
+SET(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
+SET(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)
+
+ADD_LIBRARY(plugin_sum SHARED plugin_sum.cpp)
+ADD_LIBRARY(plugin_aggregator SHARED plugin_aggregator.cpp)
+
+ADD_EXECUTABLE(dll_1 main_1.cpp)
+TARGET_LINK_LIBRARIES(dll_1 dl rt ${Boost_LIBRARIES})
+
+ADD_EXECUTABLE(dll_2 main_2.cpp)
+TARGET_LINK_LIBRARIES(dll_2 dl rt ${Boost_LIBRARIES})
